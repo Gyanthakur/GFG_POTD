@@ -4,9 +4,8 @@ int main(){
 
 return 0;
 }
-
+//gyan pratap singh 
 bool isStraightHand(int N, int groupSize, vector<int> &hand) {
-        // code here
         map<int,int> m;
         for(int i=0;i<N;i++){
             m[hand[i]]++;
