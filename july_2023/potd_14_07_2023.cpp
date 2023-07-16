@@ -52,3 +52,16 @@ class twoStacks
         return topElem2;
     }
 };
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     int y1=22;
+//     int y2=11;
+//     int y3=12;
+//     y1=y2++;
+//     y2=--y3;
+//     y3=y1+y2+y3+++y2++;
+//     cout<<y1<<y2<<y3;
+// return 0;
+// }   
