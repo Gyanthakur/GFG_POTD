@@ -41,16 +41,91 @@
 
 # print(rec_fun(5))
 
-def fun(per):
-    if per<=0:
-        return per+1;
-    else:
-        return fun(per//2) + fun(per//3)
 
-x = {2:3, 3:2, 1:2, 2:1}
-y = [i for i in x]
-z = y[0] + x[2]
-for x in y:
-    z += x
 
-print(fun(z))
+
+
+
+
+
+
+
+
+
+
+
+
+
+# def fun(per):
+#     if per<=0:
+#         return per+1;
+#     else:
+#         return fun(per//2) + fun(per//3)
+
+# x = {2:3, 3:2, 1:2, 2:1}
+# y = [i for i in x]
+# z = y[0] + x[2]
+# for x in y:
+#     z += x
+
+# print(fun(z))
+
+
+
+
+# def rec_fun(a):
+#     if a <= 0:
+#         return 1
+#     return 1 + rec_fun(a-2)
+
+# def rec_fun(a,b):
+#     if a<=0 or b<=0:
+#         print(rec_fun(a)+rec_fun(b))
+#         rec_fun(a-b,b-a)
+
+# # rec_fun(4,2)
+# print(rec_fun (4,2))
+
+
+
+
+
+# import pandas as pd 
+# students = {'wing 1' : {'s.no' : 1, 'name':'ram'},'wing 2' : {'s.no' : 2,'name': 'ajay'}}
+# frame = pd.DataFrame(students)
+# print(frame)
+
+
+# output 
+
+# wing 1 wing 2
+# s.no      1      2
+# name    ram   ajay
+
+
+
+
+
+# Date1 = "15Dec1989"
+# y=pd.to_datetime(Date1, format='%d%b%Y')
+# dt.strftime(y, "%A,%d %b %y")
+
+# output   Friday,15 Dec 89
+
+# Function to find inversion count of a given list
+def findInversionCount(A):
+ 
+    inversionCount = 0
+    for i in range(len(A) - 1):
+        for j in range(i + 1, len(A)):
+            if A[i] > A[j]:
+                inversionCount = inversionCount + 1
+ 
+    return inversionCount
+ 
+ 
+if __name__ == '__main__':
+ 
+    A = [18,17,21,19,25,14,12,35]
+    print("Inversion count is", findInversionCount(A))
+ 
