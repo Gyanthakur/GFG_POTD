@@ -4,6 +4,17 @@ int main(){
 
 return 0;
 }
+struct Node {
+    int data;
+    Node *left;
+    Node *right;
+
+    Node(int val) {
+        data = val;
+        left = right = NULL;
+    }
+};
+
 
 class Solution{
     public:
