@@ -113,19 +113,40 @@
 # output   Friday,15 Dec 89
 
 # Function to find inversion count of a given list
-def findInversionCount(A):
+# def findInversionCount(A):
  
-    inversionCount = 0
-    for i in range(len(A) - 1):
-        for j in range(i + 1, len(A)):
-            if A[i] > A[j]:
-                inversionCount = inversionCount + 1
+#     inversionCount = 0
+#     for i in range(len(A) - 1):
+#         for j in range(i + 1, len(A)):
+#             if A[i] > A[j]:
+#                 inversionCount = inversionCount + 1
  
-    return inversionCount
+#     return inversionCount
  
  
-if __name__ == '__main__':
+# if __name__ == '__main__':
  
-    A = [18,17,21,19,25,14,12,35]
-    print("Inversion count is", findInversionCount(A))
+#     A = [18,17,21,19,25,14,12,35]
+#     print("Inversion count is", findInversionCount(A))
  
+
+
+
+
+
+
+
+# def fun(*var):
+#     if(var[0] <=0):
+#         return 1
+#     x =  var[0]
+#     y = x >> 2
+#     return fun(y) + fun(y)
+# print(fun(100,99,98))
+
+import numpy
+x = " 1 2.4 3.9 4 5. 7 6 7"
+y = [abs(float(i)) for i in x.split()]
+z = numpy.array([a for a in y])
+p = numpy.split(z,2)
+print(p[1][0] + 4 ** 2)
