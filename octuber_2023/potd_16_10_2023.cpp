@@ -1,62 +1,68 @@
-class Solution
-{
+class Solution {
 public:
-    int largestIsland(vector<vector<int>>& grid) 
-    {
+    int largestIsland(vector<vector<int>>& grid) {
         int n = grid.size();
-        int ax[] = {0, 0, 1, -1};
-        int ay[] = {1, -1, 0, 0};
+        int maxIslandSize = 0;
+        int islandId = 2;
+        unordered_map<int, int> islandSizes;  // Maps island ID to its size
         
-        
-        auto isVal = [&](int x, int y) -> bool {
-             if(x < 0 || y < 0 || x == n || y == n) return false;
-             return true;
-        };
-        
-        int cur = 100;
-        
-        function<int(int,int)> dfs = [&](int x, int y) {
-            if(!isVal(x, y) || grid[x][y] != 1) return 0;
-            grid[x][y] = cur;
-            int ans = 0;
-            for(int i=0; i<4; i++){
-                ans += dfs(x + ax[i], y + ay[i]);            
-            }
-            return ans + 1;
-        };
-        int ans = -1;
-        unordered_map<int, int> map;
-        for(int i=0; i<n; i++){
-            for(int j = 0; j<n; j++){
-                if(grid[i][j] == 1){
-                    map[cur] = dfs(i, j);
-                    ans = max(ans, map[cur]);
-                    cur++;
+        for (int row = 0; row < n; ++row) {
+            for (int col = 0; col < n; ++col) {
+                if (grid[row][col] == 1) {
+                    int size = dfs(grid, row, col, islandId);
+                    islandSizes[islandId] = size;
+                    maxIslandSize = max(maxIslandSize, size);
+                    ++islandId;
                 }
             }
         }
         
-        
-        for(int i=0; i<n; i++){
-            for(int j = 0; j<n; j++){
-                if(grid[i][j] == 0){
-                    unordered_set<int> st;
+        // Try changing 0s to 1 and check the new island size
+        for (int row = 0; row < n; ++row) {
+            for (int col = 0; col < n; ++col) {
+                if (grid[row][col] == 0) {
+                    unordered_set<int> neighborIslands;
+                    int newSize = 1;
                     
-                    for(int k = 0; k < 4; k++){
-                        int x = i + ax[k];
-                        int y = j + ay[k];
-                        if(isVal(x, y))
-                            st.insert(grid[i + ax[k]][j + ay[k]]);
+                    for (int dr = -1; dr <= 1; ++dr) {
+                        for (int dc = -1; dc <= 1; ++dc) {
+                            if (dr == 0 || dc == 0) {
+                                int r = row + dr;
+                                int c = col + dc;
+                                if (r >= 0 && r < n && c >= 0 && c < n && grid[r][c] > 1) {
+                                    neighborIslands.insert(grid[r][c]);
+                                }
+                            }
+                        }
                     }
-                    int temp = 1;
-                    for(int x : st){
-                        temp += map[x];
+                    
+                    for (int neighbor : neighborIslands) {
+                        newSize += islandSizes[neighbor];
                     }
-                    ans = max(ans, temp);
+                    
+                    maxIslandSize = max(maxIslandSize, newSize);
                 }
             }
         }
         
-        return ans;
+        return maxIslandSize;
+    }
+    
+private:
+    int dfs(vector<vector<int>>& grid, int row, int col, int islandId) {
+        int n = grid.size();
+        if (row < 0 || row >= n || col < 0 || col >= n || grid[row][col] != 1) {
+            return 0;
+        }
+        
+        grid[row][col] = islandId;
+        int size = 1;
+        
+        size += dfs(grid, row - 1, col, islandId);
+        size += dfs(grid, row + 1, col, islandId);
+        size += dfs(grid, row, col - 1, islandId);
+        size += dfs(grid, row, col + 1, islandId);
+        
+        return size;
     }
 };
