@@ -4,6 +4,17 @@
 
 Welcome to Hacktoberfest, a fantastic opportunity for students to engage with the open-source community and contribute meaningfully to various projects. Here's a comprehensive guide to help you navigate your way through this exciting journey.
 
+## How to Contribute(using git):
+- Fork this Repository using the button at the top on right corner.
+- Clone your forked repository to your pc ( git clone "url from clone option.)
+- Create a new branch for your modifications (ie. `git branch new-user` and check it out `git checkout new-user` or simply do `git checkout -b new-user`)
+- Add your files (`git add -A`), commit (`git commit -m "added myself"`) and push (`git push origin new-user`)
+- Create a pull request
+- Star this repository
+
+##  Wait for Pull Request to merge
+##  Celebrate - you've done your first pull request!!
+
 ## How to Contribute:
 
 ### 1. **Get Started:**
@@ -12,45 +23,15 @@ Welcome to Hacktoberfest, a fantastic opportunity for students to engage with th
    - **Follow the Account:**
      Stay updated with the latest developments by following the repository owner's account.
 
-### 2. **Prepare Yourself:**
-   - **Read the Guidelines:**
-     Familiarize yourself with the project's contribution guidelines. Each project might have specific rules you need to follow.
-   - **Understand the Codebase:**
-     Spend some time exploring the existing codebase. Understanding the project structure helps you identify areas for improvement.
+### 2. **Fork the Repo**
+### 3. **Clone on your local system**
+### 4. **Add the POTD File With Date**
+### 5. **Write a Valid commit**
+### 6. **Push the changes**
+### 7. **Create Pull request**
+### 8. **Wait for merge**
 
-### 3. **Set Up Your Development Environment:**
-   - **Fork the Repository:**
-     Click the "Fork" button on the top right to create your own copy of the repository.
-   - **Clone the Repository:**
-     Clone the forked repository to your local machine using `git clone https://github.com/your-username/repository-name.git`.
 
-### 4. **Make Your Contribution:**
-   - **Implement Changes:**
-     Make your desired changes in the codebase. Ensure your modifications align with the project's goals.
-
-### 5. **Test and Validate:**
-   - **Ensure Quality:**
-     Test your changes thoroughly. Verify that your modifications don't introduce errors.
-   - **Validation is Key:**
-     Validate your code to ensure it meets the project's standards and requirements.
-
-### 6. **Commit Your Changes:**
-   - **Stage Your Changes:**
-     Stage your modifications: `git add .`.
-   - **Commit Your Changes:**
-     Commit your changes with a meaningful message: `git commit -m "Brief description of your changes"`.
-
-### 7. **Share Your Contribution:**
-   - **Push Your Changes:**
-     Push your changes to your forked repository: `git push origin my-feature`.
-
-### 8. **Create a Pull Request (PR):**
-   - **Open a PR:**
-     Go to your forked repository on GitHub and click "New Pull Request".
-   - **Describe Your Changes:**
-     Provide a detailed description of your changes in the PR template.
-   - **Submit for Review:**
-     Submit the pull request for review. Be open to feedback and engage in discussions.
 
 ### 9. **Engage and Learn:**
    - **Be Open to Feedback:**
@@ -66,6 +47,17 @@ Remember, open source thrives on collaboration and learning. Embrace the process
 
 **Note:** Always refer to the specific project's guidelines and code of conduct for any additional instructions or requirements regarding contributions.
 
+```py
+'''
+Always make more then 4 pull requests.
+Lets say you have made only 4 pull request to different projects,
+but one project is excluded from hackoctoberfest event then your pull request will not be counted and 
+then you have remaining 3 valid pull requests if these projects is not excluded.
+If you fail to make 4 pull requests then you can't get digital-swags.
+I will recommend you to make pull request to your own repo which is very very safest side for you..
+keep in mind that repo has hacktoberfest topic..
+'''
+```
 
 
 # also wathch 
