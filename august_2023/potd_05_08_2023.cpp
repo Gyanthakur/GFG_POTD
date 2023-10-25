@@ -14,7 +14,7 @@ void solution()
 signed main()
 {
 
-cin.tie(NULL);
+
 cout.tie(NULL);
 cin>>t;
 while(t--)
