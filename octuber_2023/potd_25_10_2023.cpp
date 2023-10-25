@@ -74,20 +74,4 @@ public:
         return Space_Opti(N, W, val, wt);
     }
 };
-void solution()
-{
 
-}
-signed main()
-{
-ios_base::sync_with_stdio(false); 
-cin.tie(NULL);
-cout.tie(NULL);
-cin>>t;
-while(t--)
-{
-solution();
-cout<<endl;
-}
-return 0;
-}
