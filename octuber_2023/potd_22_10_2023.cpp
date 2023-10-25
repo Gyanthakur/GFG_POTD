@@ -5,7 +5,7 @@
 #include<math.h>
 #include<set>
 using namespace std;
-#define int long long
+
 long long  t;
 class Solution
 {
