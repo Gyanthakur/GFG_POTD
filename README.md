@@ -17,29 +17,29 @@ Welcome to Hacktoberfest, a fantastic opportunity for students to engage with th
 
 ## How to Contribute:
 
-### 1. **Get Started:**
-   ### - **Give star the Repository:** it is mandatory
+###  **Get Started:**
+  1. ### - **Give star the Repository:** it is mandatory
      Show your support by starring the repository. This helps in boosting the project's visibility.
-  ### - **Follow the Account:** it is mandatory
+  2. ### - **Follow the Account:** it is mandatory
      Stay updated with the latest developments by following the repository owner's account.
 
-### 2. **Fork the Repo**
-### 3. **Clone on your local system**
-### 4. **Add the POTD File With Date**
-### 5. **Write a Valid commit**
-### 6. **Push the changes**
-### 7. **Create Pull request**
-### 8. **Wait for merge**
+### 3. **Fork the Repo**
+### 5. **Clone on your local system**
+### 6. **Add the POTD File With Date**
+### 7. **Write a Valid commit**
+### 8. **Push the changes**
+### 9. **Create Pull request**
+### 10. **Wait for merge**
 
 
 
-### 9. **Engage and Learn:**
+### 11. **Engage and Learn:**
    - **Be Open to Feedback:**
      Engage in discussions with project maintainers. Be receptive to feedback and be willing to make necessary changes.
    - **Learn and Grow:**
      Hacktoberfest is not just about contributing; it's a learning opportunity. Embrace the experience and grow your skills.
 
-### 10. **Celebrate Your Achievement:**
+### 12. **Celebrate Your Achievement:**
    - **Success Celebration:**
      Once your PR is merged, celebrate your successful contribution to the open-source community! You've made a meaningful impact.
 
