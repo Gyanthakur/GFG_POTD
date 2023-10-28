@@ -18,9 +18,9 @@ Welcome to Hacktoberfest, a fantastic opportunity for students to engage with th
 ## How to Contribute:
 
 ###  **Get Started:**
-  1. ### - **Give star the Repository:** it is mandatory
+###  1.   **Give star the Repository:** it is mandatory
      Show your support by starring the repository. This helps in boosting the project's visibility.
-  2. ### - **Follow the Account:** it is mandatory
+###  2.  **Follow the Account:** it is mandatory
      Stay updated with the latest developments by following the repository owner's account.
 
 ### 3. **Fork the Repo**
