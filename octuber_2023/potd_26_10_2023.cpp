@@ -1,36 +1,38 @@
-#include<bits/stdc++.h>
-#include<vector>
-#include<string>
-#include<map>
-#include<math.h>
-#include<set>
+//{ Driver Code Starts
+#include <bits/stdc++.h>
 using namespace std;
-#define int long long
-long long  t;
+
+// } Driver Code Ends
+
 class Solution
 {
-  public:
-     int minOperation(int n)
+public:
+    int minOperation(int n)
     {
-        int steps = 0;
-        while(n) (n&1) ? n-- : n >>= 1, steps++;
-        return steps;
+        int out = -1;
+        while(n){
+            if(n%2)
+                ++out;
+            n /= 2;
+            ++out;
+        }
+        
+        return out;
     }
 };
-void solution()
-{
 
-}
-signed main()
+
+//{ Driver Code Starts.
+int main()
 {
-ios_base::sync_with_stdio(false); 
-cin.tie(NULL);
-cout.tie(NULL);
-cin>>t;
-while(t--)
-{
-solution();
-cout<<endl;
+	int t;
+	cin>>t;
+	while(t--)
+	    {
+	        int n;
+	        cin>>n;
+	        Solution ob;
+	        cout<<ob.minOperation(n)<<endl;
+	    }
 }
-return 0;
-}
+// } Driver Code Ends
