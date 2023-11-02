@@ -1,0 +1,50 @@
+
+
+class Solution{
+    public:
+
+    long long int sumXOR(int arr[], int n)
+    {
+        
+long long int ans=0;
+
+    
+      for(int i=0;i<32;i++){
+          
+        long long int set_bit=0;
+          long long int unset_bit=0;
+        
+        for(int j=0;j<n;j++){
+            
+          if(arr[j]%2==0)
+          unset_bit++;
+           
+          else
+          set_bit++;
+           
+          arr[j]/=2;
+        
+        }
+     
+
+        
+         ans+=pow(2,i)*set_bit*unset_bit;
+    
+    }
+    
+    return ans;
+
+     
+  
+    }
+};
+
+
+
+
+
+
+
+
+
+    

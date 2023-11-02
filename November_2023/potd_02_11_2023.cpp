@@ -7,6 +7,7 @@
 using namespace std;
 #define int long long
 long long  t;
+
 class Solution{
   public:
     int minDist(int a[], int n, int x, int y) {
@@ -35,6 +36,7 @@ class Solution{
         
     }
 };
+
 void solution()
 {
 
