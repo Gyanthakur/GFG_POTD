@@ -5,7 +5,7 @@
 # the repo. Unless a later match takes precedence,
 # @global-owner1 and @global-owner2 will be requested for
 # review when someone opens a pull request.
-* @Gyanthakur     
+*@Gyanthakur     
 
 # Order is important; the last matching pattern takes the most
 # precedence. When someone opens a pull request that only
@@ -23,6 +23,8 @@
 # explicit write access to the repository. In this example,
 # the octocats team in the octo-org organization owns all .txt files.
 *.txt 
+*.cpp
+*.cpp @Gyanthakur
 
 # In this example, @doctocat owns any files in the build/logs
 # directory at the root of the repository and any of its
@@ -58,8 +60,10 @@ apps/
 /apps/ 
 /apps/github
 
+
 # In this example, @octocat owns any file in the `/apps`
 # directory in the root of your repository except for the `/apps/github`
 # subdirectory, as this subdirectory has its own owner @doctocat
 /apps/ 
 /apps/github 
+/November_2023
