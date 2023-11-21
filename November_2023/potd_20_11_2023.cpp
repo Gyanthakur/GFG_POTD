@@ -6,43 +6,36 @@
 #include<set>
 using namespace std;
 #define int long long
-struct Node 
+
+long long  t;
+struct Node
 {
     int data;
-    Node *left;
-    Node *right;
-
-    Node(int val) {
-        data = val;
+    struct Node* left;
+    struct Node* right;
+    
+    Node(int x){
+        data = x;
         left = right = NULL;
     }
 };
-class Solution{
-  public:
-  void dfs(Node* node, int currPathSum, int target, unordered_map<int, int>& pathCount, int& res) {
-        if (node == NULL) {
-            return;
-        }
 
-        currPathSum += node->data;
-        res += pathCount[currPathSum - target];
-        pathCount[currPathSum]++;
 
-        dfs(node->left, currPathSum, target, pathCount, res);
-        dfs(node->right, currPathSum, target, pathCount, res);
 
-        pathCount[currPathSum]--;
-    }
-  
-    int sumK(Node *root,int k)
+   
+class Solution
+{
+    public:
+    //Function to check if two trees are identical.
+    bool isIdentical(Node *r1, Node *r2)
     {
-       unordered_map<int, int> pathCount;
-        pathCount[0] = 1;
-        int res = 0;
-        dfs(root, 0, k, pathCount, res);
-        return res;
+        if(r1==NULL && r2==NULL)
+        return true;
+        if(r1==NULL || r2==NULL ||(r1->data!=r2->data))
+        return false;
+        return isIdentical(r1->left,r2->left)&&isIdentical(r1->right,r2->right);
     }
-};long long  t;
+};
 void solution()
 {
 
