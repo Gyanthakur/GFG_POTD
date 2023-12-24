@@ -7,7 +7,7 @@
 using namespace std;
 #define int long long
 long long  t;
-public:
+// public:
     //Function to find all elements in array that appear more than n/k times.
     int countOccurence(int arr[], int n, int k) {
         // Your code here
