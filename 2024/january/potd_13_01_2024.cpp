@@ -5,9 +5,17 @@
 #include<math.h>
 #include<set>
 using namespace std;
-#define int long long
+// #define int long long
 long long  t;
-void solution()
+
+struct Node {
+	int data;
+	struct Node *next;
+	Node(int x) {
+		data = x;
+		next = NULL;
+	}
+};
 class Solution
 {
 public:
@@ -47,9 +55,7 @@ public:
         return dummy->next;
     }
 };
-{
 
-}
 signed main()
 {
 ios_base::sync_with_stdio(false); 
@@ -58,7 +64,7 @@ cout.tie(NULL);
 cin>>t;
 while(t--)
 {
-solution();
+
 cout<<endl;
 }
 return 0;
