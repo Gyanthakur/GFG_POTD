@@ -1,4 +1,3 @@
-# Pull Request Template
 
 ## Description
 
@@ -13,18 +12,8 @@ Use [ ] to represent an unchecked box.❌
 
 - [ ] Question Added
 - [ ] Solution Added
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Documentation update
 - [ ] Other (please specify):
 
-## How to Test
-
-Provide a brief description of how to test your changes. Include steps, commands, or screenshots if necessary.
-
-1. Step 1
-2. Step 2
-3. Step 3
 
 ## Checklist
 
