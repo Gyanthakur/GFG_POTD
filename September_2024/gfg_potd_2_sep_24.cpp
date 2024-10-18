@@ -83,4 +83,4 @@ class Solution{
 //  -The algorithm processes each cell at most once using a priority queue. In a grid of size n × m, the number of cells is -𝑂((n*m)log(n*m))
 
 //👉🏻 space complexcity
- // -The space complexity is 𝑂((n*m),due to the DP table (dp) and the priority queue (pq), which store information for each cell.
+ // -The space complexity is 𝑂((n*m),due to the DP table (dp) and the priority queue (pq), which store information for each cells.
