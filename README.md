@@ -43,30 +43,21 @@ Welcome to Hacktoberfest, a fantastic opportunity for students to engage with th
    - **Success Celebration:**
      Once your PR is merged, celebrate your successful contribution to the open-source community! You've made a meaningful impact.
 
-Remember, open source thrives on collaboration and learning. Embrace the process, enjoy your coding journey, and happy hacking! 🚀
+     
+ ## Need Help? Contact Me!
 
-**Note:** Always refer to the specific project's guidelines and code of conduct for any additional instructions or requirements regarding contributions.
+If you have any query or confusion, you can WhatsApp me by clicking the button below:
 
-```py
-'''
-Always make more then 4 pull requests.
-Lets say you have made only 4 pull request to different projects,
-but one project is excluded from hackoctoberfest event then your pull request will not be counted and 
-then you have remaining 3 valid pull requests if these projects is not excluded.
-If you fail to make 4 pull requests then you can't get digital-swags.
-I will recommend you to make pull request to your own repo which is very very safest side for you..
-keep in mind that repo has hacktoberfest topic..
-'''
-```
+<a href="https://wa.me/918957818597?text=Hey%20%F0%9F%91%8B%2C%20how%20can%20I%20help%20you%3F">
+    <img src="https://img.shields.io/badge/WhatsApp-Click%20Me-25D366?style=for-the-badge&logo=whatsapp" alt="WhatsApp" />
+</a>
 
-
-# also wathch 
+Or reach me directly at this whatsapp number: **+91 895-7818-597**
 
 
 
-- [https://github.com/Gyanthakur/music_player](https://github.com/Gyanthakur/music_player)
-- [https://github.com/Gyanthakur/snakegame.github.io](https://github.com/Gyanthakur/snakegame.github.io)
-- [https://github.com/Gyanthakur/portfolio-gps](https://github.com/Gyanthakur/portfolio-gps)
-- [https://github.com/Gyanthakur/GFG_POTD](https://github.com/Gyanthakur/GFG_POTD)
-- [https://github.com/Gyanthakur/TextUtils](https://github.com/Gyanthakur/TextUtils)
-- [https://github.com/Gyanthakur/Dev_Profiles](https://github.com/Gyanthakur/Dev_Profiles)
+
+## Thank You
+Thank you to every contributor of this repository <br>
+Show some love by giving a star ⭐ to this repository!
+
