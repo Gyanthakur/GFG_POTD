@@ -1,30 +1,26 @@
 // C++ program to compute sum of digits in
-// number.
 #include <bits/stdc++.h>
 using namespace std;
 
-/* Function to get sum of digits */
-class gfg {
+class addSum {
 public:
 	int getSum(int n)
 	{
-		int sum = 0;
+		int total = 0;
 		while (n != 0) {
-			sum = sum + n % 10;
+			 total = total + n % 10;
 			n = n / 10;
 		}
-		return sum;
+		return total;
 	}
 };
 
-// Driver code
 int main()
 {
-	gfg g;
+	addSum g;
 	int n = 687;
 
 	// Function call
 	cout << g.getSum(n);
 	return 0;
 }
-// This code is contributed by Soumik
