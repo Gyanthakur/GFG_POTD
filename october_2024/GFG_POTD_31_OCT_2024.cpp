@@ -1,3 +1,11 @@
+/*
+    Problem
+    Given a sorted doubly linked list and an element x, you need to insert the element x into the correct position in the sorted Doubly linked list(DLL).
+
+    Note: The DLL is sorted in ascending order
+
+*/
+
 //{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
