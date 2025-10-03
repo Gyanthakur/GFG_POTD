@@ -1,3 +1,5 @@
+class Solution:
+    def maxOnes(self, arr, k):
         left = 0
         zeroes = 0
         max_len = 0
@@ -13,4 +15,4 @@
 
             max_len = max(max_len, right - left + 1)
 
-        return max_len
+        return max_len        
