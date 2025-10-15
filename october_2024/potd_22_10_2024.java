@@ -13,12 +13,12 @@ Explanation: The possible sub-arrays have same equal number of occurrences of x 
 
 import java.util.HashMap;
 
-public class EqualOccurrences {
+public class potd_22_10_2024 {
     public static int countEqualOccurrences(int[] arr, int x, int y) {
         // HashMap to store the frequency of count differences.
         HashMap<Integer, Integer> countMap = new HashMap<>();
-        int countDiff = 0;  // Tracks the difference between counts of x and y.
-        int result = 0;     // Stores the number of valid subarrays.
+        int countDiff = 0; // Tracks the difference between counts of x and y.
+        int result = 0; // Stores the number of valid subarrays.
 
         // Initialize the map with countDiff 0 (initial state).
         countMap.put(0, 1);
@@ -26,9 +26,9 @@ public class EqualOccurrences {
         // Traverse the array and update the count difference.
         for (int num : arr) {
             if (num == x) {
-                countDiff++;  // Increment if the element is x.
+                countDiff++; // Increment if the element is x.
             } else if (num == y) {
-                countDiff--;  // Decrement if the element is y.
+                countDiff--; // Decrement if the element is y.
             }
 
             // If this countDiff was seen before, it means there's a valid subarray.
@@ -42,7 +42,7 @@ public class EqualOccurrences {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 2, 1};
+        int[] arr = { 1, 2, 1 };
         int x = 1, y = 2;
 
         int result = countEqualOccurrences(arr, x, y);

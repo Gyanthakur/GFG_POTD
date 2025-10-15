@@ -12,9 +12,10 @@ Explanation: {(1),(2, 3)}, {(2),(1, 3)}, {(3),(1, 2)} are three ways with equal 
 
 */
 
+// User function Template for Java
 import java.util.*;
 
-public class EqualXORSubsets {
+public class potd_21_10_2024 {
 
     static final int MOD = 1_000_000_007;
 
@@ -57,10 +58,8 @@ public class EqualXORSubsets {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3};
+        int[] arr = { 1, 2, 3 };
         int result = countWays(arr);
         System.out.println("Number of ways to split the array: " + result);
     }
 }
-
-

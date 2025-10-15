@@ -1,7 +1,7 @@
+#include <bits/stdc++.h>
+using namespace std;
 
-
-/*
-Structure of linked list is as
+// Structure of linked list is as
 struct Node
 {
     int data;
@@ -13,37 +13,38 @@ struct Node
     }
 };
 
-Utility function to get XOR of two Struct Node pointer
-use this function to get XOR of two pointers
+//Utility function to get XOR of two Struct Node pointer
+//use this function to get XOR of two pointers
 struct Node* XOR (struct Node *a, struct Node *b)
 {
     return (struct Node*) ((uintptr_t) (a) ^ (uintptr_t) (b));
 }
-*/
 
 // function should insert the data to the front of the list
-struct Node *insert(struct Node *head, int data) {
+struct Node *insert(struct Node *head, int data)
+{
     // Code here
-    struct Node* x=new Node(data);
-    x->npx=XOR(NULL,head);
-    if(head)
+    struct Node *x = new Node(data);
+    x->npx = XOR(NULL, head);
+    if (head)
     {
-        head->npx=XOR(x,XOR(NULL,head->npx));
+        head->npx = XOR(x, XOR(NULL, head->npx));
     }
     return x;
 }
 
-vector<int> getList(struct Node *head) {
+vector<int> getList(struct Node *head)
+{
     // Code here
     vector<int> ans;
-    struct Node* prev=NULL;
-    struct Node* next;
-    while(head)
+    struct Node *prev = NULL;
+    struct Node *next;
+    while (head)
     {
         ans.push_back(head->data);
-        next=XOR(prev,head->npx);
-        prev=head;
-        head=next;
+        next = XOR(prev, head->npx);
+        prev = head;
+        head = next;
     }
     return ans;
 }

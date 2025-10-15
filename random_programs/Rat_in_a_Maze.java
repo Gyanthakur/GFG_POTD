@@ -13,12 +13,14 @@ class Solution {
         boolean[][] visited = new boolean[n][n];
         solve(0, 0, maze, n, new StringBuilder(), visited, result);
 
-        // The final sort is no longer needed because we explore in lexicographical order.
+        // The final sort is no longer needed because we explore in lexicographical
+        // order.
         return result;
     }
 
-    private void solve(int row, int col, int[][] maze, int n, StringBuilder path, boolean[][] visited, ArrayList<String> result) {
-        
+    private void solve(int row, int col, int[][] maze, int n, StringBuilder path, boolean[][] visited,
+            ArrayList<String> result) {
+
         // Base case: If we've reached the destination, add the path to our results.
         if (row == n - 1 && col == n - 1) {
             result.add(path.toString());
@@ -42,7 +44,7 @@ class Solution {
                 // Append direction and recurse
                 path.append(directions.charAt(i));
                 solve(nextRow, nextCol, maze, n, path, visited, result);
-                
+
                 // Backtrack: remove the last added character to explore other paths.
                 path.deleteCharAt(path.length() - 1);
             }
@@ -53,7 +55,8 @@ class Solution {
     }
 
     private boolean isSafe(int row, int col, int[][] maze, boolean[][] visited, int n) {
-        // Check if the next cell is within bounds, is a valid path (1), and hasn't been visited.
+        // Check if the next cell is within bounds, is a valid path (1), and hasn't been
+        // visited.
         return row >= 0 && col >= 0 && row < n && col < n && maze[row][col] == 1 && !visited[row][col];
     }
 }

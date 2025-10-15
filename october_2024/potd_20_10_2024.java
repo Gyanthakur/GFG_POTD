@@ -1,3 +1,19 @@
+
+// User function Template for Java
+import java.util.*;
+
+// class DLLNode
+class DLLNode {
+    int data;
+    DLLNode next, prev;
+
+    DLLNode(int data) {
+        this.data = data;
+        next = null;
+        prev = null;
+    }
+}
+
 // https://www.geeksforgeeks.org/problems/sort-a-k-sorted-doubly-linked-list/1
 
 class Solution {
