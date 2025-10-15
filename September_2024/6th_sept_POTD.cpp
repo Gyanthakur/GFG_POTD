@@ -21,22 +21,26 @@ Explanation: Max subarray sum is 16 of elements (5, 4, 7) */
 #include <vector>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int maxSubArray(vector<int>& arr) {
+    int maxSubArray(vector<int> &arr)
+    {
         int maxSoFar = arr[0]; // Initialize to the first element
         int maxEndingHere = arr[0];
 
-        for (int i = 1; i < arr.size(); i++) {
+        for (int i = 1; i < arr.size(); i++)
+        {
             maxEndingHere = max(arr[i], maxEndingHere + arr[i]); // Max sum ending at current position
-            maxSoFar = max(maxSoFar, maxEndingHere); // Update overall max
+            maxSoFar = max(maxSoFar, maxEndingHere);             // Update overall max
         }
 
         return maxSoFar;
     }
 };
 
-int main() {
+int main()
+{
     Solution obj;
 
     vector<int> arr1 = {1, 2, 3, -2, 5};
@@ -50,4 +54,3 @@ int main() {
 
     return 0;
 }
-

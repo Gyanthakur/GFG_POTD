@@ -1,19 +1,23 @@
-/*
-Structure of the node of the binary tree
+#include <bits/stdc++.h>
+using namespace std;
+
+// Structure of the node of the binary tree
 struct Node
 {
-    int data;
-    struct Node *next;
+  int data;
+  struct Node *next;
 
-    Node(int x){
-        int data = x;
-        next = NULL;
-    }
+  Node(int x)
+  {
+    int data = x;
+    next = NULL;
+  }
 };
-*/
+
 // Complete this function
 // Time Complexity : O(n)
 // Space Complexity : O(1)
+
 class Solution
 {
 public:

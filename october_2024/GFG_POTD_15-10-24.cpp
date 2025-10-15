@@ -16,22 +16,26 @@ Given an unsorted array of integers arr[], and a target tar, determine the numbe
 #include <bits/stdc++.h>
 using namespace std;
 
-
 // } Driver Code Ends
-class Solution {
-  public:
+class Solution
+{
+public:
     // Function to count the number of subarrays which adds to the given sum.
-    int subArraySum(vector<int>& arr, int tar) {
+    int subArraySum(vector<int> &arr, int tar)
+    {
         // Your code here
-        unordered_map<int,int> mp;
+        unordered_map<int, int> mp;
         int n = arr.size();
         int sum = 0;
-        int cnt=  0;
-        for(int i = 0 ; i < n ; i++){
-            sum+=arr[i];
-            if(sum == tar) cnt++;
-            if(mp.find(sum - tar) != mp.end()){
-                cnt+=mp[sum-tar];
+        int cnt = 0;
+        for (int i = 0; i < n; i++)
+        {
+            sum += arr[i];
+            if (sum == tar)
+                cnt++;
+            if (mp.find(sum - tar) != mp.end())
+            {
+                cnt += mp[sum - tar];
             }
             mp[sum]++;
         }
@@ -41,18 +45,21 @@ class Solution {
 
 //{ Driver Code Starts.
 
-int main() {
+int main()
+{
     string ts;
     getline(cin, ts);
     int t = stoi(ts);
-    while (t--) {
+    while (t--)
+    {
 
         vector<int> arr;
         string input;
         getline(cin, input);
         stringstream ss(input);
         int number;
-        while (ss >> number) {
+        while (ss >> number)
+        {
             arr.push_back(number);
         }
         string ks;

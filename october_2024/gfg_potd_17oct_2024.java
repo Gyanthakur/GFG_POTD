@@ -16,15 +16,14 @@ struct Node
 class Solution {
     // Function to append a new node with newData at the end of a linked list
     Node[] alternatingSplitList(Node head) {
-       
-  
+
         // Edge case: if the list is empty, return two null lists
         if (head == null) {
             return new Node[] { null, null };
         }
 
         // Create two dummy nodes to simplify the process of creating two sublists
-        Node oddDummy = new Node(0);  // List for odd indexed elements
+        Node oddDummy = new Node(0); // List for odd indexed elements
         Node evenDummy = new Node(0); // List for even indexed elements
         Node oddTail = oddDummy, evenTail = evenDummy;
 

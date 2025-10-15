@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-int findMinOperation(int n, int matrix[][])
+
+int findMinOperation(int n, int matrix[][10])
 {
     int sum = 0;
     for (int i = 0; i < n; i++)
@@ -26,11 +27,12 @@ int findMinOperation(int n, int matrix[][])
             cos += matrix[j][i];
             cs = max(rs, cos);
         }
-        int maxSum = max(cs,rs);
-        int ans = maxSum*n - sum;
+        int maxSum = max(cs, rs);
+        int ans = maxSum * n - sum;
         return ans;
     }
 }
+
 int main()
 {
     int n;

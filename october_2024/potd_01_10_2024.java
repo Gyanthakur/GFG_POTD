@@ -1,3 +1,4 @@
+
 //{ Driver Code Starts
 import java.util.*;
 
@@ -11,18 +12,19 @@ class Node {
     }
 }
 
-
 // } Driver Code Ends
-/*Node is defined as
-class Node
-{
-    int data;
-    Node next;
-    Node(int data) {
-        this.data=data;
-        this.next = null;
-    }
-}*/
+/*
+ * Node is defined as
+ * class Node
+ * {
+ * int data;
+ * Node next;
+ * Node(int data) {
+ * this.data=data;
+ * this.next = null;
+ * }
+ * }
+ */
 
 class Solution {
     public long multiplyTwoLists(Node first, Node second) {
@@ -43,10 +45,12 @@ class Solution {
     }
 }
 
-//{ Driver Code Starts.
+// { Driver Code Starts.
 
-public class GFG {
-    public static Node newNode(int data) { return new Node(data); }
+public class potd_01_10_2024 {
+    public static Node newNode(int data) {
+        return new Node(data);
+    }
 
     public static void push(Node[] head_ref, int new_data) {
         Node new_Node = newNode(new_data);

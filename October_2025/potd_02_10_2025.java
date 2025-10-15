@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 class Solution {
     public ArrayList<ArrayList<Integer>> combinationSum(int n, int k) {
         // code here
@@ -5,15 +7,16 @@ class Solution {
         backtrack(1, new ArrayList<>(), 0, k, n, result);
         return result;
     }
-    
-    private void backtrack(int start, ArrayList<Integer> current, int sum, int k, int n, ArrayList<ArrayList<Integer>> result) {
+
+    private void backtrack(int start, ArrayList<Integer> current, int sum, int k, int n,
+            ArrayList<ArrayList<Integer>> result) {
         if (current.size() == k) {
             if (sum == n) {
                 result.add(new ArrayList<>(current));
             }
             return;
         }
-        
+
         for (int i = start; i <= 9; i++) {
             if (sum + i > n) {
                 break; // Prune the branch if sum exceeds n
@@ -24,4 +27,3 @@ class Solution {
         }
     }
 }
-

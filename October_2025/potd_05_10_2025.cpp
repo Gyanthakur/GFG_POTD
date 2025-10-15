@@ -1,18 +1,26 @@
-class Solution {
+#include <bits/stdc++.h>        
+using namespace std;
+
+class Solution
+{
 public:
-    vector<string> ratInMaze(vector<vector<int>>& maze) {
+    vector<string> ratInMaze(vector<vector<int>> &maze)
+    {
         int n = maze.size();
         vector<string> paths;
         vector<vector<int>> visited(n, vector<int>(n, 0));
         string path = "";
 
-        function<void(int,int)> dfs = [&](int x, int y) {
-            if (x < 0 || y < 0 || x >= n || y >= n || visited[x][y] || maze[x][y] == 0) return;
-            if (x == n - 1 && y == n - 1) {
+        function<void(int, int)> dfs = [&](int x, int y)
+        {
+            if (x < 0 || y < 0 || x >= n || y >= n || visited[x][y] || maze[x][y] == 0)
+                return;
+            if (x == n - 1 && y == n - 1)
+            {
                 paths.push_back(path);
                 return;
             }
-            
+
             visited[x][y] = 1;
 
             path.push_back('D');

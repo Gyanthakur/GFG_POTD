@@ -14,15 +14,18 @@ Explanation: All the numbers from 1 to 2 are present except 2.*/
 #include <vector>
 using namespace std;
 
-class Solution {
-  public:
-    int findMissingNumber(vector<int>& arr) {
-        int n = arr.size() + 1; // Since one number is missing
+class Solution
+{
+public:
+    int findMissingNumber(vector<int> &arr)
+    {
+        int n = arr.size() + 1;            // Since one number is missing
         int expectedSum = n * (n + 1) / 2; // Sum of first n natural numbers
         int actualSum = 0;
 
         // Calculate the sum of elements in the array
-        for (int num : arr) {
+        for (int num : arr)
+        {
             actualSum += num;
         }
 
@@ -31,7 +34,8 @@ class Solution {
     }
 };
 
-int main() {
+int main()
+{
     Solution obj;
     vector<int> arr1 = {1, 2, 3, 5};
     cout << "Missing number in arr1: " << obj.findMissingNumber(arr1) << endl; // Output: 4

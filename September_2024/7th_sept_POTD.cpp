@@ -13,15 +13,19 @@ Explanation: After removing natural numbers which contains digit 9, first 9 numb
 #include <iostream>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int findNthNaturalNumber(int n) {
-        int count = 0; // Counter for valid numbers
+    int findNthNaturalNumber(int n)
+    {
+        int count = 0;   // Counter for valid numbers
         int current = 1; // Current number to check
 
-        while (count < n) {
+        while (count < n)
+        {
             // Convert current number to string and check if it contains '9'
-            if (to_string(current).find('9') == string::npos) {
+            if (to_string(current).find('9') == string::npos)
+            {
                 count++; // Valid number found
             }
             current++; // Move to the next number
@@ -31,7 +35,8 @@ public:
     }
 };
 
-int main() {
+int main()
+{
     Solution obj;
 
     cout << "The 8th natural number (excluding 9s) is: " << obj.findNthNaturalNumber(8) << endl; // Output: 8
@@ -39,4 +44,3 @@ int main() {
 
     return 0;
 }
-

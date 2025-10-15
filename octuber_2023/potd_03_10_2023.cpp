@@ -4,9 +4,11 @@
 #include <map>
 #include <math.h>
 #include <set>
+
 using namespace std;
 // #define int long long
 long long t;
+
 class Solution
 {
 public:
@@ -18,9 +20,11 @@ public:
         return colName((n - 1) / 26) + char(65 + (n - 1) % 26);
     }
 };
+
 void solution()
 {
 }
+
 signed main()
 {
     ios_base::sync_with_stdio(false);
