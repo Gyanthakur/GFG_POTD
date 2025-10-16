@@ -27,7 +27,7 @@ class Solution {
                 return '1' + new String(numArr);
             }
         }
-        
+
         return new String(numArr);
     }
 }

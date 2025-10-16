@@ -1,23 +1,30 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-int main(){
 
-return 0;
+int main()
+{
+    return 0;
 }
-class Solution{
-public: 
-    long long int largestPrimeFactor(int N){
+
+class Solution
+{
+public:
+    long long int largestPrimeFactor(int N)
+    {
         long long ans;
-        int i=2;
-        while(i<N){
-            if(N%i==0){
-                N/=i;
+        int i = 2;
+        while (i < N)
+        {
+            if (N % i == 0)
+            {
+                N /= i;
             }
-           else{ i++;}
+            else
+            {
+                i++;
+            }
         }
-        ans=N;
+        ans = N;
         return ans;
     }
-
-
 };

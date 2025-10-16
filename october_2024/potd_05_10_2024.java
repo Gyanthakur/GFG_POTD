@@ -1,8 +1,9 @@
+
 //{ Driver Code Starts
 // Initial Template for Java
 import java.util.*;
 
-public class Main {
+public class potd_05_10_2024 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
@@ -25,12 +26,12 @@ public class Main {
 
 // } Driver Code Ends
 
-
 class Solution {
     public long findSmallest(int[] arr) {
         int n = arr.length;
         long res = 1;
-        for (int i = 0; i < n && arr[i] <= res; i++) res += arr[i];
+        for (int i = 0; i < n && arr[i] <= res; i++)
+            res += arr[i];
         return res;
     }
 }

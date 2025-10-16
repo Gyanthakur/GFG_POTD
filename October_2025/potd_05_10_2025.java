@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
 class Solution {
     public ArrayList<String> ratInMaze(int[][] maze) {
         ArrayList<String> result = new ArrayList<>();
@@ -13,13 +16,13 @@ class Solution {
         return result;
     }
 
-    private void solve(int row, int col, int[][] maze, int n, String path, boolean[][] visited, ArrayList<String> result) {
-       
+    private void solve(int row, int col, int[][] maze, int n, String path, boolean[][] visited,
+            ArrayList<String> result) {
+
         if (row == n - 1 && col == n - 1) {
             result.add(path);
             return;
         }
-
 
         visited[row][col] = true;
 

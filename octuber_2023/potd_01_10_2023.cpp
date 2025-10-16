@@ -4,9 +4,11 @@
 #include <map>
 #include <math.h>
 #include <set>
+
 using namespace std;
 #define int long long
 long long t;
+
 class Solution
 {
 public:
@@ -27,9 +29,11 @@ public:
         return ans;
     }
 };
+
 void solution()
 {
 }
+
 signed main()
 {
     ios_base::sync_with_stdio(false);

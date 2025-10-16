@@ -13,6 +13,7 @@ struct Node
         right = NULL;
     }
 };
+
 int getNode(Node *root, int k)
 {
     queue<pair<Node *, int>> q;
@@ -39,24 +40,23 @@ int getNode(Node *root, int k)
     }
     return ans;
 }
+
 int main()
 {
     int t;
-    cin>>t;
-    while(t--)
+    cin >> t;
+    while (t--)
     {
         string treestring;
-        getline(cin,treestring);
+        getline(cin, treestring);
         // Node *root = buildTree(treestring);
         int k;
-        cin>>k;
-        int res = getNode(treestring,k);
-        cout<<res<<endl;
+        cin >> k;
+        int res = getNode(NULL, k);
+        cout << res << endl;
 
-        
-// 10 8 2 3 N 3 6 N N N 4
-// 8
-
+        // 10 8 2 3 N 3 6 N N N 4
+        // 8
     }
     return 0;
 }

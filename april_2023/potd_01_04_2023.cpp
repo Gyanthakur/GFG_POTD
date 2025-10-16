@@ -1,21 +1,9 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-
-
-
-
-
-
-
-
-
 
 /*
 
-
-
 EASY AND EFFICIENT SOLUTION O(1):
-
 
 OBSERVATION :
 
@@ -53,9 +41,7 @@ AND SOON .
 
 DERIVATION OF FORMULA :
 
-SO FOR N=6 , TO MAKE ALL ARRAY ELEMENTS EQUAL TO 6 , WE SHOULD CALCULATE THE VALUE OF 
-
- 
+SO FOR N=6 , TO MAKE ALL ARRAY ELEMENTS EQUAL TO 6 , WE SHOULD CALCULATE THE VALUE OF
 
 " ( | 1-6 | + | 3- 6 | + | 5 - 6 | + | 7-6 | + | 9 -  6| + | 11 - 6| ) "
 
@@ -63,15 +49,15 @@ WHICH IS EQUAL TO
 
  SUM OF N ODD NUMBERS - SQUARE OF N "
 
-BUT AS MENTIONED IN THE QUESTION 
+BUT AS MENTIONED IN THE QUESTION
 
-WE CAN INCREMENT AND DECREMENT IN ONE SINGLE STEP 
+WE CAN INCREMENT AND DECREMENT IN ONE SINGLE STEP
 
-THE FORMULA BECOMES 
+THE FORMULA BECOMES
 
-  (  SUM OF N ODD NUMBERS - ( (SQUARE OF N)/2) )/2 
+  (  SUM OF N ODD NUMBERS - ( (SQUARE OF N)/2) )/2
 
-WHICH IS EQUAL TO  (N^2 - ((N^2)/2))/2 
+WHICH IS EQUAL TO  (N^2 - ((N^2)/2))/2
 
 WHICH CAN BE FURTHER SIMPLIFIED TO
 
@@ -79,30 +65,23 @@ WHICH CAN BE FURTHER SIMPLIFIED TO
 
 SO THE FINAL FORMULA IS :
 
-     ( N^2) /4 
+     ( N^2) /4
 
 C++ CODE :
 
-
 */
 
+class Solution
+{
+public:
+  long long int minOperations(int N)
+  {
+    // Code here
+    return ((long long)N * N) / 4;
 
-
-
-
-
-class Solution {
-  public:
-    long long int minOperations(int N) {
-        // Code here
-      return ((long long)N*N)/4;
-    
-    
-    
     /*
     other method
-    
-    
+
         if(N == 1)
        {
        return 0;
@@ -111,21 +90,19 @@ class Solution {
        {
            return 1;
        }
-        
+
         long ibm = -1;
-        long res = 0;    
-        
+        long res = 0;
+
         ibm = ((N + 1) / 2) - 1;
         res = (ibm * (ibm + 1));
-        
+
         if(N % 2 == 0)
         {
             res += (ibm + 1);
         }
-        
+
         return res;
         */
-    
-
-    }
+  }
 };

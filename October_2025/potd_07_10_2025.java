@@ -1,15 +1,16 @@
+
 // POTD: Sort Colors
 // URL: https://practice.geeksforgeeks.org/problems/sort-colors
 // Github username: <BhuwanSKumar>
 import java.util.Arrays;
 
-public class SortColors {
-    
+public class potd_07_10_2025 {
+
     public static void sortColors(int[] nums) {
         int low = 0, mid = 0, high = nums.length - 1;
 
-        while(mid <= high) {
-            switch(nums[mid]) {
+        while (mid <= high) {
+            switch (nums[mid]) {
                 case 0:
                     int temp = nums[low];
                     nums[low] = nums[mid];
@@ -31,7 +32,7 @@ public class SortColors {
     }
 
     public static void main(String[] args) {
-        int[] arr1 = {2,0,2,1,1,0};
+        int[] arr1 = { 2, 0, 2, 1, 1, 0 };
         sortColors(arr1);
         System.out.println(Arrays.toString(arr1));
 
@@ -39,7 +40,7 @@ public class SortColors {
         sortColors(arr2);
         System.out.println(Arrays.toString(arr2));
 
-        int[] arr3 = {0,0,0};
+        int[] arr3 = { 0, 0, 0 };
         sortColors(arr3);
         System.out.println(Arrays.toString(arr3));
     }

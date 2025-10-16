@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+  // area of circle
+  int r;
+  cout << "enter the radius of the circle" << endl;
+  cin >> r;
+  cout << 3.14 * r * r << endl;
+
+  // area of rectangle
+  int l, b;
+  cout << "enter the length of the rectangle" << endl;
+  cin >> l;
+  cout << "enter the breadth of the rectangle" << endl;
+  cin >> b;
+  cout << "the area is " << l * b << endl;
+}

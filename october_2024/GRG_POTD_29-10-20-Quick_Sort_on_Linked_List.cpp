@@ -1,65 +1,94 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+// } Driver Code Ends
 
-/* a node of the singly linked list
-struct node
-{
+// structure of the node of the singly linked list is as
+
+struct Node {
     int data;
-    struct node *next;
+    struct Node* next;
 
-    node(int x){
+    Node(int x) {
         data = x;
         next = NULL;
     }
-}; */
+};
+
+// // a node of the singly linked list
+// struct node
+// {
+//     int data;
+//     struct node *next;
+
+//     node(int x)
+//     {
+//         data = x;
+//         next = NULL;
+//     }
+// };
 
 // Solution class with quickSort function
-class Solution {
-  public:
-  struct Node* findPivot(struct Node* head){
-        if(!head->next){
+class Solution
+{
+public:
+    struct Node *findPivot(struct Node *head)
+    {
+        if (!head->next)
+        {
             return head;
         }
-        int p=head->data;
-        struct Node* j=head->next;
-        struct Node* i=head;
+        int p = head->data;
+        struct Node *j = head->next;
+        struct Node *i = head;
         int temp;
-        while(j){
-            if(j->data<p){
-                i=i->next;
-                temp=i->data;
-                i->data=j->data;
-                j->data=temp;
+        while (j)
+        {
+            if (j->data < p)
+            {
+                i = i->next;
+                temp = i->data;
+                i->data = j->data;
+                j->data = temp;
             }
-            j=j->next;
+            j = j->next;
         }
-        temp=head->data;
-        head->data=i->data;
-        i->data=temp;
+        temp = head->data;
+        head->data = i->data;
+        i->data = temp;
         return i;
     }
-    void sortQ(struct Node* head){
-        if(!head){
+
+    void sortQ(struct Node *head)
+    {
+        if (!head)
+        {
             return;
         }
-        struct Node* pivot=findPivot(head);
-        struct Node* pre=nullptr;
-        struct Node* curr=head;
-        while(curr!=pivot){
-            pre=curr;
-            curr=curr->next;
+        struct Node *pivot = findPivot(head);
+        struct Node *pre = nullptr;
+        struct Node *curr = head;
+        while (curr != pivot)
+        {
+            pre = curr;
+            curr = curr->next;
         }
-        if(pre){
-            pre->next=nullptr;
+        if (pre)
+        {
+            pre->next = nullptr;
             sortQ(head);
-            pre->next=pivot;
+            pre->next = pivot;
         }
-        
+
         sortQ(pivot->next);
     }
-    struct Node* quickSort(struct Node* head) {
+
+    struct Node *quickSort(struct Node *head)
+    {
         // code here
         sortQ(head);
         return head;
-    //s truct Node* quickSort(struct Node* head) {
-        // code here
+        // s truct Node* quickSort(struct Node* head) {
+        //  code here
     }
 };

@@ -3,46 +3,55 @@
 using namespace std;
 
 // Structure for the linked list node
-struct Node {
+struct Node
+{
     int data;
     struct Node *next;
 
-    Node(int x) {
+    Node(int x)
+    {
         data = x;
         next = NULL;
     }
 };
 
 // Function to print nodes in a given circular linked list
-void printList(struct Node *head) {
-    if (head != NULL) {
+void printList(struct Node *head)
+{
+    if (head != NULL)
+    {
         struct Node *temp = head;
-        do {
+        do
+        {
             cout << temp->data << " ";
             temp = temp->next;
         } while (temp != head);
-    } else {
+    }
+    else
+    {
         cout << "empty" << endl;
     }
     cout << endl;
 }
 
-
 // } Driver Code Ends
-class Solution {
-  public:
+class Solution
+{
+public:
     // Function to reverse a circular linked list
-    Node* reverse(Node* head) {
+    Node *reverse(Node *head)
+    {
         // code here
-                if (head == NULL || head->next == head)
+        if (head == NULL || head->next == head)
             return head;
 
-        Node* prev = NULL;
-        Node* current = head;
-        Node* next;
-        Node* init = head;
+        Node *prev = NULL;
+        Node *current = head;
+        Node *next;
+        Node *init = head;
 
-        do {
+        do
+        {
             next = current->next;
             current->next = prev;
             prev = current;
@@ -55,17 +64,20 @@ class Solution {
     }
 
     // Function to delete a node from the circular linked list
-    Node* deleteNode(Node* head, int key) {
+    Node *deleteNode(Node *head, int key)
+    {
         // code here
-                if (head == NULL)
+        if (head == NULL)
             return head;
 
-        Node* current = head;
-        Node* prev = NULL;
+        Node *current = head;
+        Node *prev = NULL;
 
         // Finding the node to delete
-        while (current->data != key) {
-            if (current->next == head) {
+        while (current->data != key)
+        {
+            if (current->next == head)
+            {
                 // Node with key not found in the list
                 return head;
             }
@@ -74,26 +86,31 @@ class Solution {
         }
 
         // Case 1: Only one node in the list
-        if (current == head && current->next == head) {
+        if (current == head && current->next == head)
+        {
             head = NULL;
             return head;
         }
 
         // Case 2: Deleting the head node
-        if (current == head) {
+        if (current == head)
+        {
             prev = head;
-            while (prev->next != head) {
+            while (prev->next != head)
+            {
                 prev = prev->next;
             }
             head = current->next;
             prev->next = head;
         }
         // Case 3: Deleting the last node
-        else if (current->next == head) {
+        else if (current->next == head)
+        {
             prev->next = head;
         }
         // Case 4: Deleting a node in between
-        else {
+        else
+        {
             prev->next = current->next;
         }
 
@@ -103,12 +120,14 @@ class Solution {
 
 //{ Driver Code Starts.
 
-int main() {
+int main()
+{
     int t;
     cin >> t;
     cin.ignore();
 
-    while (t--) {
+    while (t--)
+    {
         vector<int> arr;
         string input;
         getline(cin, input);
@@ -116,7 +135,8 @@ int main() {
         int number;
 
         // Reading input into a vector
-        while (ss >> number) {
+        while (ss >> number)
+        {
             arr.push_back(number);
         }
 
@@ -127,7 +147,8 @@ int main() {
         // Creating the circular linked list
         struct Node *head = new Node(arr[0]);
         struct Node *tail = head;
-        for (int i = 1; i < arr.size(); ++i) {
+        for (int i = 1; i < arr.size(); ++i)
+        {
             tail->next = new Node(arr[i]);
             tail = tail->next;
         }

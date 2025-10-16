@@ -1,16 +1,18 @@
 #include <iostream>
 using namespace std;
 
-class Queue {
+class Queue
+{
 private:
-    int* arr;
+    int *arr;
     int capacity;
     int front;
     int rear;
     int count;
 
 public:
-    Queue(int size) {
+    Queue(int size)
+    {
         arr = new int[size];
         capacity = size;
         front = 0;
@@ -18,12 +20,15 @@ public:
         count = 0;
     }
 
-    ~Queue() {
+    ~Queue()
+    {
         delete[] arr;
     }
 
-    void enqueue(int item) {
-        if (isFull()) {
+    void enqueue(int item)
+    {
+        if (isFull())
+        {
             cout << "Queue is full! Cannot enqueue " << item << endl;
             return;
         }
@@ -33,8 +38,10 @@ public:
         cout << "Enqueued: " << item << endl;
     }
 
-    void dequeue() {
-        if (isEmpty()) {
+    void dequeue()
+    {
+        if (isEmpty())
+        {
             cout << "Queue is empty! Cannot dequeue." << endl;
             return;
         }
@@ -43,36 +50,44 @@ public:
         count--;
     }
 
-    int getFront() {
-        if (isEmpty()) {
+    int getFront()
+    {
+        if (isEmpty())
+        {
             cout << "Queue is empty!" << endl;
             return -1;
         }
         return arr[front];
     }
 
-    int getRear() {
-        if (isEmpty()) {
+    int getRear()
+    {
+        if (isEmpty())
+        {
             cout << "Queue is empty!" << endl;
             return -1;
         }
         return arr[rear];
     }
 
-    bool isEmpty() {
+    bool isEmpty()
+    {
         return count == 0;
     }
 
-    bool isFull() {
+    bool isFull()
+    {
         return count == capacity;
     }
 
-    int size() {
+    int size()
+    {
         return count;
     }
 };
 
-int main() {
+int main()
+{
     Queue queue(5);
 
     queue.enqueue(10);

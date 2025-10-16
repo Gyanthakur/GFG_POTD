@@ -3,8 +3,8 @@ import java.util.Comparator;
 
 class Solution {
     // Arrays for the 8 possible Knight moves (dx, dy)
-    private final int[] move_x = {2, 1, -1, -2, -2, -1, 1, 2};
-    private final int[] move_y = {1, 2, 2, 1, -1, -2, -2, -1};
+    private final int[] move_x = { 2, 1, -1, -2, -2, -1, 1, 2 };
+    private final int[] move_y = { 1, 2, 2, 1, -1, -2, -2, -1 };
 
     public ArrayList<ArrayList<Integer>> knightTour(int n) {
         // Initialize the board with -1s to represent unvisited squares.
@@ -21,7 +21,7 @@ class Solution {
         board.get(0).set(0, 0);
 
         // Start the recursive backtracking from (0, 0) with move count 1
-        // The total number of steps to visit is n*n. Since we start at 0, 
+        // The total number of steps to visit is n*n. Since we start at 0,
         // the last step will be n*n - 1. We look for a move_count of n*n.
         if (solveTourUtil(n, board, 0, 0, 1)) {
             // Solution found.
@@ -38,11 +38,11 @@ class Solution {
 
     // Checks if (x, y) is on board and unvisited (-1)
     private boolean isSafe(int n, ArrayList<ArrayList<Integer>> board, int x, int y) {
-        return (x >= 0 && x < n && 
-                y >= 0 && y < n && 
+        return (x >= 0 && x < n &&
+                y >= 0 && y < n &&
                 board.get(x).get(y) == -1);
     }
-    
+
     // Warnsdorff's Rule Helper: Counts valid onward moves from (x, y)
     private int getDegree(int n, ArrayList<ArrayList<Integer>> board, int x, int y) {
         int count = 0;
@@ -58,8 +58,8 @@ class Solution {
 
     // Optimized Backtracking recursive function using Warnsdorff's Rule
     private boolean solveTourUtil(int n, ArrayList<ArrayList<Integer>> board, int curr_x, int curr_y, int move_count) {
-        
-        // Base Case: Tour complete (n*n squares visited). 
+
+        // Base Case: Tour complete (n*n squares visited).
         // Since we started at 0, the last step is n*n - 1. move_count will reach n*n.
         if (move_count == n * n) {
             return true;
@@ -70,16 +70,17 @@ class Solution {
         for (int i = 0; i < 8; i++) {
             int next_x = curr_x + move_x[i];
             int next_y = curr_y + move_y[i];
-            
+
             if (isSafe(n, board, next_x, next_y)) {
                 // Calculate degree *before* making the move
                 int degree = getDegree(n, board, next_x, next_y);
                 // Store {next_x, next_y, degree}
-                validMoves.add(new int[]{next_x, next_y, degree}); 
+                validMoves.add(new int[] { next_x, next_y, degree });
             }
         }
-        
-        // 2. Sort moves by ascending degree (Warnsdorff's Rule: minimum onward moves first)
+
+        // 2. Sort moves by ascending degree (Warnsdorff's Rule: minimum onward moves
+        // first)
         // This is the optimization that prevents TLE.
         validMoves.sort(Comparator.comparingInt(a -> a[2]));
 

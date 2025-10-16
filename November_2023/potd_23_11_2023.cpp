@@ -1,32 +1,43 @@
-#include<bits/stdc++.h>
-#include<vector>
-#include<string>
-#include<map>
-#include<math.h>
-#include<set>
+#include <bits/stdc++.h>
+#include <vector>
+#include <string>
+#include <map>
+#include <math.h>
+#include <set>
+
 using namespace std;
 #define int long long
-long long  t;
+long long t;
+
 struct Node
 {
     int data;
     Node *left;
     Node *right;
     int height;
+
+    Node(int val)
+    {
+        data = val;
+        left = right = nullptr;
+        height = 1; // initialize height for a new node
+    }
 };
 
-
-class Solution {
+class Solution
+{
 public:
-    int getHeight(Node* node) {
+    int getHeight(Node *node)
+    {
         if (node == nullptr)
             return 0;
         return node->height;
     }
 
-    Node* rotateRight(Node* currentNode) {
-        Node* newRoot = currentNode->left;
-        Node* newRootRightSubtree = newRoot->right;
+    Node *rotateRight(Node *currentNode)
+    {
+        Node *newRoot = currentNode->left;
+        Node *newRootRightSubtree = newRoot->right;
 
         newRoot->right = currentNode;
         currentNode->left = newRootRightSubtree;
@@ -37,9 +48,10 @@ public:
         return newRoot;
     }
 
-    Node* rotateLeft(Node* currentNode) {
-        Node* newRoot = currentNode->right;
-        Node* newRootLeftSubtree = newRoot->left;
+    Node *rotateLeft(Node *currentNode)
+    {
+        Node *newRoot = currentNode->right;
+        Node *newRootLeftSubtree = newRoot->left;
 
         newRoot->left = currentNode;
         currentNode->right = newRootLeftSubtree;
@@ -50,46 +62,57 @@ public:
         return newRoot;
     }
 
-    int getBalance(Node* root) {
-        if (root == nullptr) {
+    int getBalance(Node *root)
+    {
+        if (root == nullptr)
+        {
             return 0;
         }
         return getHeight(root->left) - getHeight(root->right);
     }
 
-    Node* insertToAVL(Node* node, int data) {
+    Node *insertToAVL(Node *node, int data)
+    {
         // Base case: If the node is null, create a new node with the given data.
-        if (node == nullptr) {
+        if (node == nullptr)
+        {
             return new Node(data);
         }
 
         // Recursive insertions
-        if (node->data > data) {
+        if (node->data > data)
+        {
             node->left = insertToAVL(node->left, data);
-        } else if (node->data < data) {
+        }
+        else if (node->data < data)
+        {
             node->right = insertToAVL(node->right, data);
-        } else {
+        }
+        else
+        {
             // Duplicate data is not allowed in AVL trees.
             return node;
         }
 
         node->height = 1 + max(getHeight(node->left), getHeight(node->right));
 
-        
         int balance = getBalance(node);
 
-        
-        if (balance > 1 && node->left->data > data) {
+        if (balance > 1 && node->left->data > data)
+        {
             return rotateRight(node);
         }
-        if (balance < -1 && node->right->data < data) {
+        if (balance < -1 && node->right->data < data)
+        {
             return rotateLeft(node);
         }
-        if (balance > 1 && node->left->data < data) {
+        if (balance > 1 && node->left->data < data)
+        {
             node->left = rotateLeft(node->left);
             return rotateRight(node);
         }
-        if (balance < -1 && node->right->data > data) {
+        if (balance < -1 && node->right->data > data)
+        {
             node->right = rotateRight(node->right);
             return rotateLeft(node);
         }
@@ -99,18 +122,18 @@ public:
 
 void solution()
 {
-
 }
+
 signed main()
 {
-ios_base::sync_with_stdio(false); 
-cin.tie(NULL);
-cout.tie(NULL);
-cin>>t;
-while(t--)
-{
-solution();
-cout<<endl;
-}
-return 0;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    cin >> t;
+    while (t--)
+    {
+        solution();
+        cout << endl;
+    }
+    return 0;
 }

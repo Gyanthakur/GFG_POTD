@@ -1,9 +1,8 @@
 import java.util.ArrayList;
-    
-class potd_6_10_2025 {
-    static int[] dx = {2, 1, -1, -2, -2, -1, 1, 2};
-    static int[] dy = {1, 2, 2, 1, -1, -2, -2, -1};
 
+class potd_6_10_2025 {
+    static int[] dx = { 2, 1, -1, -2, -2, -1, 1, 2 };
+    static int[] dy = { 1, 2, 2, 1, -1, -2, -2, -1 };
 
     static boolean isSafe(int x, int y, int n, ArrayList<ArrayList<Integer>> board) {
         return (x >= 0 && y >= 0 && x < n && y < n && board.get(x).get(y) == -1);
@@ -11,7 +10,7 @@ class potd_6_10_2025 {
 
     static boolean knightTourUtil(int x, int y, int step, int n, ArrayList<ArrayList<Integer>> board) {
         if (step == n * n) {
-            return true; 
+            return true;
         }
 
         for (int i = 0; i < 8; i++) {
@@ -30,7 +29,6 @@ class potd_6_10_2025 {
         return false;
     }
 
-
     public static ArrayList<ArrayList<Integer>> knightTour(int n) {
         ArrayList<ArrayList<Integer>> board = new ArrayList<>();
         for (int i = 0; i < n; i++) {
@@ -40,7 +38,6 @@ class potd_6_10_2025 {
             }
             board.add(row);
         }
-
 
         board.get(0).set(0, 0);
 

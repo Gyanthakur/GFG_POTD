@@ -13,12 +13,12 @@ class Solution {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int t = Integer.parseInt(scanner.nextLine());
-        
+
         while (t-- > 0) {
             String input = scanner.nextLine();
             String[] parts = input.split(" ");
             int[] arr = new int[parts.length];
-            
+
             for (int i = 0; i < parts.length; i++) {
                 arr[i] = Integer.parseInt(parts[i]);
             }
@@ -27,7 +27,7 @@ class Solution {
             int res = obj.getSingle(arr);
             System.out.println(res);
         }
-        
+
         scanner.close();
     }
 }

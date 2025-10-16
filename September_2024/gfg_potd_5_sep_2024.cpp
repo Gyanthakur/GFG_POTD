@@ -1,14 +1,21 @@
 // 👉🏻 Q.You are given an array arr of size n - 1 that contains distinct integers in the range from 1 to n (inclusive). This array represents a permutation of the integers from 1 to n with one element missing. Your task is to identify and return the missing element.
+//  From the cell (i,j) we can go (i,j-1), (i, j+1), (i-1, j), (i+1, j).
+#include <iostream>
+#include <vector>
+using namespace std;
 
-class Solution {
-  public:
-    int missingNumber(int n, vector<int>& arr) {
+class Solution
+{
+public:
+    int missingNumber(int n, vector<int> &arr)
+    {
 
-        long long expectedSum = n * (n + 1) / 2;  // Expected sum of the first n natural numbers
+        long long expectedSum = n * (n + 1) / 2; // Expected sum of the first n natural numbers
         long long actualSum = 0;
 
         // Calculate the sum of elements in the array
-        for(int i = 0; i < arr.size(); i++){
+        for (int i = 0; i < arr.size(); i++)
+        {
             actualSum += arr[i];
         }
 
@@ -17,11 +24,9 @@ class Solution {
     }
 };
 
-
-//👉🏻logic of code
-// The code finds the missing number in an array containing n-1 distinct integers from 1 to n. It calculates the expected sum of the first n natural numbers using the formula n(n+1)/2.
-// then subtracts the actual sum of the array elements from the expected sum. The difference between these sums is the missing number.
-
+// 👉🏻logic of code
+//  The code finds the missing number in an array containing n-1 distinct integers from 1 to n. It calculates the expected sum of the first n natural numbers using the formula n(n+1)/2.
+//  then subtracts the actual sum of the array elements from the expected sum. The difference between these sums is the missing number.
 
 // 👉🏻  Time Complexity (TC):
 // O(n):

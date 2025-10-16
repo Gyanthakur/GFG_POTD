@@ -1,16 +1,18 @@
 import java.util.*;
 
-class potd_04_10_2025{
+class potd_04_10_2025 {
     List<String> res = new ArrayList<>();
 
     public void dfs(String s, long target, int idx, String path, long eval, long prev) {
         if (idx == s.length()) {
-            if (eval == target) res.add(path);
+            if (eval == target)
+                res.add(path);
             return;
         }
 
         for (int i = idx; i < s.length(); i++) {
-            if (i != idx && s.charAt(idx) == '0') break; // skip leading zeros
+            if (i != idx && s.charAt(idx) == '0')
+                break; // skip leading zeros
             String curStr = s.substring(idx, i + 1);
             long cur = Long.parseLong(curStr);
 

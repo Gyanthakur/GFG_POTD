@@ -1,21 +1,20 @@
 //{ Driver Code Starts
-#include<stdio.h>
-#include<stdlib.h>
-#include<iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
 using namespace std;
 /* A linked list node */
-
 
 struct Node
 {
     int data;
     struct Node *next;
-    
-    Node(int x){
+
+    Node(int x)
+    {
         data = x;
         next = NULL;
     }
-    
 };
 
 struct Node *start = NULL;
@@ -29,18 +28,17 @@ void printList(struct Node *node)
         node = node->next;
     }
     printf("\n");
-    
 }
 
 void insert()
 {
-    int n,value;
-    cin>>n;
+    int n, value;
+    cin >> n;
     struct Node *temp;
-    for(int i=0;i<n;i++)
+    for (int i = 0; i < n; i++)
     {
-        cin>>value;
-        if(i==0)
+        cin >> value;
+        if (i == 0)
         {
             start = new Node(value);
             temp = start;
@@ -54,74 +52,70 @@ void insert()
     }
 }
 
-
 // } Driver Code Ends
 /*
   reverse alternate nodes and append at the end
-  The input list will have at least one element  
-  Node is defined as 
+  The input list will have at least one element
+  Node is defined as
   struct Node
   {
       int data;
       struct Node *next;
-    
+
       Node(int x){
         data = x;
         next = NULL;
       }
-    
+
    };
 
 */
 class Solution
 {
-    public:
-    Node * get(struct Node *odd)
+public:
+    Node *get(struct Node *odd)
     {
-                if(odd->next==NULL||odd->next->next==NULL)
+        if (odd->next == NULL || odd->next->next == NULL)
         {
             return odd;
         }
-        Node* temp=odd->next->next;
-        Node* last=temp->next;
-       temp= get(temp);
-    //   Node * temp1=temp;
-    //   while(temp1->next!=NULL)
-    //   {
-    //       temp1=temp1->next;
-    //   }
-    if(last==NULL)
-    {
-        temp->next=odd->next;
-        odd->next->next=NULL;
-        odd->next=temp;
-    }
-      else
-      {
-          
-          last->next=odd->next;
-          odd->next->next=NULL;
-          odd->next=temp;
-          
-      }
+        Node *temp = odd->next->next;
+        Node *last = temp->next;
+        temp = get(temp);
+        //   Node * temp1=temp;
+        //   while(temp1->next!=NULL)
+        //   {
+        //       temp1=temp1->next;
+        //   }
+        if (last == NULL)
+        {
+            temp->next = odd->next;
+            odd->next->next = NULL;
+            odd->next = temp;
+        }
+        else
+        {
+
+            last->next = odd->next;
+            odd->next->next = NULL;
+            odd->next = temp;
+        }
     }
     void rearrange(struct Node *odd)
     {
-        //add code here
+        // add code here
 
-         get(odd);
-        
+        get(odd);
     }
 };
-
-
 
 //{ Driver Code Starts.
 int main()
 {
     int t;
-    cin>>t;
-    while (t--) {
+    cin >> t;
+    while (t--)
+    {
         insert();
         Solution ob;
         ob.rearrange(start);

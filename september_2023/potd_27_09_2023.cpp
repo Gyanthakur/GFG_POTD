@@ -1,12 +1,14 @@
-#include<bits/stdc++.h>
-#include<vector>
-#include<string>
-#include<map>
-#include<math.h>
-#include<set>
+#include <bits/stdc++.h>
+#include <vector>
+#include <string>
+#include <map>
+#include <math.h>
+#include <set>
+
 using namespace std;
 #define int long long
-long long  t;
+long long t;
+
 class Solution
 {
 public:
@@ -14,13 +16,14 @@ public:
     {
         sort(arr, arr + n);
         sort(brr, brr + m);
-        int ans1=arr[0], ans2=arr[0];
+        int ans1 = arr[0], ans2 = arr[0];
         int diff = INT_MAX;
         for (int i = 0; i < n; i++)
         {
             int tm = x - arr[i];
             int left = 0, right = m - 1, mid;
-            bool f = 0,f2=0;;
+            bool f = 0, f2 = 0;
+            ;
             while (left <= right)
             {
                 mid = left + (right - left) / 2;
@@ -28,8 +31,8 @@ public:
                 {
                     ans1 = arr[i];
                     ans2 = brr[mid];
-                    diff=0;
-                    f2=1;
+                    diff = 0;
+                    f2 = 1;
                     break;
                 }
                 else if (brr[mid] > tm)
@@ -38,7 +41,7 @@ public:
                     {
                         ans1 = arr[i];
                         ans2 = brr[mid];
-                         diff=abs(brr[mid] + arr[i] - x);
+                        diff = abs(brr[mid] + arr[i] - x);
                     }
                     right = mid;
                 }
@@ -48,7 +51,7 @@ public:
                     {
                         ans1 = arr[i];
                         ans2 = brr[mid];
-                        diff=abs(brr[mid] + arr[i] - x);
+                        diff = abs(brr[mid] + arr[i] - x);
                     }
                     left = mid + 1;
                 }
@@ -57,29 +60,31 @@ public:
                 if (left == right)
                     f = 1;
             }
-            if(f2)break;
+            if (f2)
+                break;
         }
-        vector<int>v;
+        vector<int> v;
         v.push_back(ans1);
         v.push_back(ans2);
         // cout<<ans1<<" "<<ans2<<endl;
         return v;
     }
 };
+
 void solution()
 {
-
 }
+
 signed main()
 {
-ios_base::sync_with_stdio(false); 
-cin.tie(NULL);
-cout.tie(NULL);
-cin>>t;
-while(t--)
-{
-solution();
-cout<<endl;
-}
-return 0;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    cin >> t;
+    while (t--)
+    {
+        solution();
+        cout << endl;
+    }
+    return 0;
 }

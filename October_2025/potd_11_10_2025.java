@@ -17,11 +17,11 @@ public class potd_11_10_2025 {
     }
 
     public static void main(String[] args) {
-        int[] arr1 = {4, 7, 1, 9, 3};
+        int[] arr1 = { 4, 7, 1, 9, 3 };
         System.out.println("Array: " + java.util.Arrays.toString(arr1));
         System.out.println("Largest Element: " + findLargest(arr1));
 
-        int[] arr2 = {-5, -2, -10, -1};
+        int[] arr2 = { -5, -2, -10, -1 };
         System.out.println("Array: " + java.util.Arrays.toString(arr2));
         System.out.println("Largest Element: " + findLargest(arr2));
     }
