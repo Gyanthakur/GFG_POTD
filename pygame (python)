@@ -1,0 +1,89 @@
+import pygame
+import numpy as np
+import time
+
+# --- Configuration ---
+SQUARE_SIZE = 10
+GRID_WIDTH = 60
+GRID_HEIGHT = 40
+SCREEN_WIDTH = GRID_WIDTH * SQUARE_SIZE
+SCREEN_HEIGHT = GRID_HEIGHT * SQUARE_SIZE
+COLOR_DEAD = (10, 10, 40)
+COLOR_ALIVE = (0, 255, 0)
+UPDATE_RATE = 10  # Generations per second
+
+# Initialize Pygame
+pygame.init()
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption("Conway's Game of Life")
+clock = pygame.time.Clock()
+
+# Initialize Grid: 0 for dead, 1 for alive.
+# Use random initial state for a unique start.
+grid = np.random.randint(0, 2, size=(GRID_HEIGHT, GRID_WIDTH))
+
+def draw_grid(surface, current_grid):
+    """Draws the current state of the grid to the screen."""
+    for y in range(GRID_HEIGHT):
+        for x in range(GRID_WIDTH):
+            color = COLOR_ALIVE if current_grid[y, x] == 1 else COLOR_DEAD
+            rect = pygame.Rect(x * SQUARE_SIZE, y * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE)
+            pygame.draw.rect(surface, color, rect)
+
+def update_grid(current_grid):
+    """Calculates the next generation of the grid based on the rules."""
+    new_grid = current_grid.copy()
+
+    for y in range(GRID_HEIGHT):
+        for x in range(GRID_WIDTH):
+            # Count live neighbors, handling wrap-around for boundary conditions
+            # Uses modulo operator (%) for toroidal (wrap-around) boundaries
+            live_neighbors = (
+                current_grid[(y - 1) % GRID_HEIGHT, (x - 1) % GRID_WIDTH] +
+                current_grid[(y - 1) % GRID_HEIGHT, x] +
+                current_grid[(y - 1) % GRID_HEIGHT, (x + 1) % GRID_WIDTH] +
+                current_grid[y, (x - 1) % GRID_WIDTH] +
+                current_grid[y, (x + 1) % GRID_WIDTH] +
+                current_grid[(y + 1) % GRID_HEIGHT, (x - 1) % GRID_WIDTH] +
+                current_grid[(y + 1) % GRID_HEIGHT, x] +
+                current_grid[(y + 1) % GRID_HEIGHT, (x + 1) % GRID_WIDTH]
+            )
+
+            # Apply Conway's Rules:
+            if current_grid[y, x] == 1: # ALIVE cell rules
+                if live_neighbors < 2 or live_neighbors > 3:
+                    new_grid[y, x] = 0  # 1. Underpopulation or Overpopulation -> DEATH
+            else: # DEAD cell rules
+                if live_neighbors == 3:
+                    new_grid[y, x] = 1  # 2. Reproduction -> BIRTH
+
+    return new_grid
+
+# --- Main Game Loop ---
+running = True
+paused = False
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                paused = not paused # Toggle pause with the spacebar
+    
+    # Fill the screen with the dead color
+    screen.fill(COLOR_DEAD)
+
+    # Update logic
+    if not paused:
+        grid = update_grid(grid)
+
+    # Drawing logic
+    draw_grid(screen, grid)
+
+    # Update the display
+    pygame.display.flip()
+
+    # Control the speed of the simulation
+    clock.tick(UPDATE_RATE)
+
+pygame.quit()
